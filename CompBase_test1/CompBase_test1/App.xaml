@@ -1,0 +1,98 @@
+﻿<Application x:Class="CompBase_test1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CompBase_test1"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!--#region MINI BUTTONS STYLE -->
+
+        <Style x:Key="miniButtons" TargetType="Button">
+            <Setter Property="Foreground" Value="white"/>
+            <Setter Property="Width" Value="35"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="white"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="1,1,1,1"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderBrush="White" BorderThickness="1,1,1,1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="border" Property="BorderBrush" Value="BLACK"/>
+                                <Setter TargetName="border" Property="Background" Value="WHITE"/>
+                                <Setter   Property="Foreground" Value="Black"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion-->
+        <!--#region Home Buttons -->
+        <Style x:Key="homebtn" TargetType="Button">
+            <Setter Property="Foreground" Value="white"/>
+           
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderBrush="#FF7199C0" BorderThickness="0,3,0,3" Background="#FF151212">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter TargetName="border" Property="BorderThickness" Value="3,3,0,3"/>
+                                <Setter TargetName="border" Property="Background" Value="#FF282323"/>
+                                
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter TargetName="border" Property="BorderBrush" Value="white"/>
+                                <Setter TargetName="border" Property="BorderThickness" Value="4,0,0,0"/>
+                                <Setter TargetName="border"  Property="Background" Value="#FF282323"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion-->
+        
+        
+        <!--#region  MENU Buttons -->
+        <Style x:Key="menuBtn" TargetType="Button">
+            <Setter Property="Foreground" Value="white"/>
+            <Setter Property="Height" Value="50"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border"  BorderBrush="#FF7199C0" BorderThickness="0,0,0,1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter TargetName="border" Property="BorderThickness" Value="3,0,0,1"/>
+                                <Setter TargetName="border"  Property="Background" Value="#FF58ACFF"/>
+
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter TargetName="border" Property="BorderBrush" Value="white"/>
+                                <Setter TargetName="border" Property="BorderThickness" Value="4,0,0,0"/>
+                                <Setter TargetName="border"  Property="Background" Value="#FF58ACFF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion-->
+    </Application.Resources>
+</Application>
+
+    
