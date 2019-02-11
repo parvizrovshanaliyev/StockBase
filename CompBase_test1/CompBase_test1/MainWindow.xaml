@@ -5,32 +5,133 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CompBase_test1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1200" ResizeMode="NoResize"  WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None">
-    <Grid RenderTransformOrigin="0.504,0.502">
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black" Offset="0"/>
-                <GradientStop Color="White" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
+        Title="MainWindow" Height="800" Width="1200" ResizeMode="NoResize"  WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Loaded="Window_Loaded" Icon="images/logo/w.png">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="95" />
+            <!--birinci setr-->
+            <RowDefinition>
+                <!--ikinci setr-->
+
+            </RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--#region Birinci setr logo yazi ve close minimize maxmize-->
+        <DockPanel x:Name="UpBorder" MouseDown="UpBorder_MouseDown">
+            <Border  Width="240" Background="Black">
+
+                <DockPanel Background="Black" Width="240">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Label Content="Stock" Foreground="White" FontFamily="Times New Roman" FontSize="36" FontWeight="Bold" Height="45" Width="98"/>
+                        <Label Content="Manager" Foreground="White" FontFamily="Times New Roman" FontSize="24" FontWeight="Bold" Height="52" Width="104"/>
+                    </StackPanel>
+                    <Image Source="images/logo/w.png" Margin="0,7,0,-5.8" Width="137"/>
+
+                </DockPanel>
+            </Border>
+            <!--CLOSE MAXMIZE MINIMIZE-->
+            <Border Background="Black" Margin="0,0,0,-10.8">
+                <DockPanel Width="112" Height="40" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="1,0,0,0">
+                    <Button Content="_" Width="41"  x:Name="btnMinimize" Click="BtnMinimize_Click" Style="{DynamicResource miniButtons}"/>
+                    <Button Content="| |" Width="35"  x:Name="btnMaxmize" Click="BtnMaxmize_Click" Style="{DynamicResource miniButtons}"/>
+                    <Button  Content="X" Width="35" x:Name="btnClose" Click="btnClose_Click" Style="{DynamicResource miniButtons}"/>
+                </DockPanel>
+            </Border>
+        </DockPanel>
+        <!--#endregion-->
+
+        <!--#region Ikinci setr Menu and Contents-->
+
+        <Grid Grid.Row="1">
+
+            <Canvas>
+                <!--#region birinci column Menu-->
+
+
+                <StackPanel x:Name="SlideMenu"  Panel.ZIndex="2" Style="{StaticResource SliderMenu}"  Margin="-133,0,14,0" Height="705" Width="240">
+                    <StackPanel.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </StackPanel.Background>
+                    <Border Height="50"></Border>
+                    <!--HoME-->
+                    <Button Style="{DynamicResource menuBtn}" x:Name="HomeBtn" Click="HomeBtn_Click" Margin="0" Height="120"  >
+                        <DockPanel HorizontalAlignment="Center">
+                            <Label Content="Home"  FontFamily="Andalus" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center" Width="147"/>
+                            <Image Source="images/logo/homepage.png" Margin="1,7,0,9.2" Width="58"></Image>
+                        </DockPanel>
+                    </Button>
+                    <!--Products-->
+                    <Button Style="{DynamicResource menuBtn}" Margin="0" Height="60"  >
+                        <DockPanel>
+                            <Label Content="Products"  FontFamily="Andalus" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center" Width="147"/>
+                            <Image Source="images/logo/gift.png" Margin="1,7,0,9.2" Width="58"></Image>
+                        </DockPanel>
+                    </Button>
+                    <Button Style="{DynamicResource menuBtn}" x:Name="Purchase" Click="Purchase_Click" Margin="0" Height="60"  >
+                        <DockPanel>
+                            <Label Content="Purchase"  FontFamily="Andalus" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center" Width="147"/>
+                            <Image Source="images/logo/shopping.png" Margin="1,7,0,9.2" Width="58"></Image>
+                        </DockPanel>
+                    </Button>
+                    <Button Style="{DynamicResource menuBtn}" Margin="0" Height="60"  >
+                        <DockPanel>
+                            <Label Content="Sale"  FontFamily="Andalus" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center" Width="147"/>
+                            <Image Source="images/logo/sales.png" Margin="1,7,0,9.2" Width="58"></Image>
+                        </DockPanel>
+                    </Button>
+                </StackPanel>
+
+                <!--#endregion-->
+
+                <!--#region Content-->
+                <Border Background="White" Height="706" Canvas.Left="107" Width="1094">
+                    <Grid x:Name="Contents">
+
+                    </Grid>
+
+                </Border>
+                <!--#endregion-->
+            </Canvas>
+
+
+
+        </Grid>
+
+
+        <!--#endregion-->
+    </Grid>
+
+
+
+
+    <!--<Grid RenderTransformOrigin="0.504,0.502">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="95"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition x:Name="Menu" Width="250" />
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <!--Logo -->
-        <Border Grid.Column="0" Grid.Row="0" Width="250" Background="#FF194D81" >
+        -->
+    <!--Logo -->
+    <!--
+        <Border Grid.Column="0" Grid.Row="0"   Width="100" Background="#FF414548" >
             <DockPanel>
-                <Image Source="images/logo/w.png" Margin="0,7,0,9.2" Width="117"></Image>
+                <Image   Source="images/logo/w.png" Margin="0,7,0,9.2" Width="110" Height="83"></Image>
                 <Label Content="Stock" FontFamily="Times New Roman" FontSize="36" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,8,3,40.2" VerticalAlignment="Center" Height="47" DockPanel.Dock="Right" Foreground="White" Width="123"/>
                 <Label Content="Manager" FontFamily="Bell MT" FontWeight="Bold" Margin="-46,0,-127,3.2" VerticalAlignment="Bottom" Height="44" DockPanel.Dock="Right" FontSize="18" HorizontalAlignment="Right" Foreground="White" Width="121"/>
             </DockPanel>
         </Border>
-        <!-- close minimize Control Buttons-->
-        <Border Grid.Column="1" Grid.Row="0" BorderBrush="#FF7199C0" BorderThickness="3,0,0,0" x:Name="UpBorder" MouseDown="UpBorder_MouseDown" Background="#FF194D81">
+        -->
+    <!-- close minimize Control Buttons-->
+    <!--
+        <Border Grid.Column="1" Grid.Row="0" BorderBrush="#FF7199C0" BorderThickness="3,0,0,0" x:Name="UpBorder" MouseDown="UpBorder_MouseDown" Background="#FF414548">
             <DockPanel Width="70" Height="40" HorizontalAlignment="Right" VerticalAlignment="Top">
                 <Button Content="_" Width="35" Style="{DynamicResource miniButtons}"/>
                 <Button  Content="X" Width="35" x:Name="btnClose" Click="btnClose_Click" Style="{DynamicResource miniButtons}"/>
@@ -49,54 +150,78 @@
                     <RowDefinition Height="80"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <!--#region                  Home Button-->
+                -->
+    <!--#region                  Home Button-->
+    <!--
                 <Border >
 
                     <Button Style="{DynamicResource homebtn}" Margin="0,0,-0.4,0" x:Name="HomeBtn" Click="HomeBtn_Click" >
-                        <DockPanel  >
-                            <Image Source="images/logo/homepage.png" Margin="0,7,0,9.2" Width="117"></Image>
-                            <Label Content="Home" FontFamily="Andalus" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Height="47" DockPanel.Dock="Right" Foreground="White" Width="123" Background="#00000000"/>
+                        <DockPanel Width="67" HorizontalAlignment="Center" Cursor="Hand"  >
+                            <Image Source="images/logo/homepage.png" Margin="1,7,0,9.2" Width="58"></Image>
+
                         </DockPanel>
                     </Button>
 
                 </Border>
-                <!--#endregion-->
+                -->
+    <!--#endregion-->
 
 
-                <!--#region                  MENU BUTTONS-->
+    <!--#region                  MENU BUTTONS-->
+    <!--
                 <Border Grid.Column="0" Grid.Row="1">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
                     <StackPanel>
                         <Button Style="{DynamicResource menuBtn}"  >
-                            <DockPanel Width="300" >
-                                <Image Source="images/logo/homepage.png" Margin="0,7,0,9.2" Width="68"></Image>
-                                <Label Content="Home salam" FontFamily="Andalus" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Height="47" DockPanel.Dock="Right" Foreground="White" Width="191" Background="#00000000"/>
+                            <DockPanel>
+                                <Label Content="Products"  FontFamily="Andalus" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"/>
+                                <Image Source="images/logo/homepage.png" Margin="1,7,0,9.2" Width="58"></Image>
                             </DockPanel>
+                          
+                            -->
+    <!--<DockPanel Width="300" >
+                                <Label Content="Home salam" FontFamily="Andalus" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Height="47" DockPanel.Dock="Right" Foreground="White" Width="191" Background="#00000000"/>
+                                <Image Source="images/logo/homepage.png" Margin="0,7,0,9.2" Width="90"></Image>
+                            </DockPanel>-->
+    <!--
                         </Button>
                         <Button Style="{DynamicResource menuBtn}"  >
-                            <DockPanel Width="300" >
-                                <Image Source="images/logo/homepage.png" Margin="0,7,0,9.2" Width="68"></Image>
-                                <Label Content="Home salam" FontFamily="Andalus" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Height="47" DockPanel.Dock="Right" Foreground="White" Width="191" Background="#00000000"/>
+                            <DockPanel>
+                                <Label Content="Products"  FontFamily="Andalus" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"/>
+                                <Image Source="images/logo/homepage.png" Margin="1,7,0,9.2" Width="58"></Image>
                             </DockPanel>
                         </Button>
-                        <Button Style="{DynamicResource menuBtn}"  >
-                            <DockPanel Width="300" >
-                                <Image Source="images/logo/homepage.png" Margin="0,7,0,9.2" Width="68"></Image>
-                                <Label Content="Home salam" FontFamily="Andalus" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Height="47" DockPanel.Dock="Right" Foreground="White" Width="191" Background="#00000000"/>
-                            </DockPanel>
-                        </Button>
-                        <Button Style="{DynamicResource menuBtn}"  >
-                            <DockPanel Width="300" >
-                                <Image Source="images/logo/homepage.png" Margin="0,7,0,9.2" Width="68"></Image>
-                                <Label Content="Home salam" FontFamily="Andalus" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Height="47" DockPanel.Dock="Right" Foreground="White" Width="191" Background="#00000000"/>
-                            </DockPanel>
-                        </Button>
+                        
+
 
                     </StackPanel>
                 </Border>
-                <!--#endregion-->
+                -->
+    <!--#endregion-->
+    <!--
 
 
             </Grid>
         </Border>
-    </Grid>
+        -->
+    <!--#region Content-->
+    <!--
+        <Border Grid.Column="1" Grid.Row="1">
+            <Grid x:Name="Contents">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="703*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+
+            </Grid>
+        </Border>
+        -->
+    <!--#endregion-->
+    <!--
+    </Grid>-->
 </Window>

@@ -14,3 +14,10 @@ C:\Users\S510UF\source\repos\CompBase_test1\CompBase_test1\obj\Debug\CompBase_te
 C:\Users\S510UF\source\repos\CompBase_test1\CompBase_test1\obj\Debug\CompBase_test1.exe
 C:\Users\S510UF\source\repos\CompBase_test1\CompBase_test1\obj\Debug\CompBase_test1.pdb
 C:\Users\S510UF\source\repos\CompBase_test1\CompBase_test1\obj\Debug\App.baml
+C:\Users\S510UF\source\repos\CompBase_test1\CompBase_test1\obj\Debug\UserControls\Home.g.cs
+C:\Users\S510UF\source\repos\CompBase_test1\CompBase_test1\obj\Debug\UserControls\Home.baml
+C:\Users\S510UF\source\repos\CompBase_test1\CompBase_test1\bin\Debug\MaterialDesignColors.dll
+C:\Users\S510UF\source\repos\CompBase_test1\CompBase_test1\bin\Debug\MaterialDesignColors.pdb
+C:\Users\S510UF\source\repos\CompBase_test1\CompBase_test1\obj\Debug\CompBase_test1.csproj.CopyComplete
+C:\Users\S510UF\source\repos\CompBase_test1\CompBase_test1\obj\Debug\UserControls\Purchase.g.cs
+C:\Users\S510UF\source\repos\CompBase_test1\CompBase_test1\obj\Debug\UserControls\Purchase.baml

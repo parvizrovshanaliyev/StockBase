@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="CompBase_test1.UserControls.Purchase"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CompBase_test1.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="880" d:DesignWidth="1368">
+    <Grid Background="White">
+        <GroupBox Header="Purchase" HorizontalAlignment="Left" Height="586" Margin="10,227,0,0" VerticalAlignment="Top" Width="1350"/>
+
+    </Grid>
+</UserControl>

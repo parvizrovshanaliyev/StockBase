@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:CompBase_test1"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+
+     
         <!--#region MINI BUTTONS STYLE -->
 
         <Style x:Key="miniButtons" TargetType="Button">
@@ -78,13 +80,13 @@
                             <Trigger Property="IsMouseOver" Value="true">
 
                                 <Setter TargetName="border" Property="BorderThickness" Value="3,0,0,1"/>
-                                <Setter TargetName="border"  Property="Background" Value="#FF58ACFF"/>
+                                <Setter TargetName="border"  Property="Background" Value="#FF282323"/>
 
                             </Trigger>
                             <Trigger Property="IsFocused" Value="true">
                                 <Setter TargetName="border" Property="BorderBrush" Value="white"/>
                                 <Setter TargetName="border" Property="BorderThickness" Value="4,0,0,0"/>
-                                <Setter TargetName="border"  Property="Background" Value="#FF58ACFF"/>
+                                <Setter TargetName="border"  Property="Background" Value="#FF282323"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -92,6 +94,34 @@
             </Setter>
         </Style>
         <!--#endregion-->
+        
+        
+        <!--#region Slide Menu-->
+        <Style x:Key="SliderMenu" TargetType="StackPanel">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimation Storyboard.TargetProperty="Margin" From="-133,0,0,0" To="0,0,0,0"  DecelerationRatio=".9" Duration="0:0:0.8"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,0,0 " To="-133,0,0,0"    DecelerationRatio=".9" Duration="0:0:0.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        <!--#endregion-->
+
+
     </Application.Resources>
 </Application>
 
